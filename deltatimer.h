@@ -1,5 +1,8 @@
 #ifndef DELTA_TIMER_Hxx
 #define DELTA_TIMER_Hxx
+
+#include <chrono>
+
 class DeltaTimer
 {
 public:
