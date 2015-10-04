@@ -33,10 +33,12 @@ public:
     {
         UNREF_PARAM(msg);
     }
+
     const std::string& getEncoded()
     {
         return _encoded;
     }
+
 protected:
     std::string _encoded;
     virtual void encodeString(const char* msg) = 0;
@@ -76,6 +78,7 @@ protected:
             }
         }
     }
+
     void encodeNonPrint(const unsigned char ch)
     {
         std::stringstream ss;
@@ -83,13 +86,14 @@ protected:
         ss << std::oct << std::setfill('0') << std::setw(3) << (const unsigned int) ch;
         _encoded.append(ss.str());
     }
+
     bool allow(const char ch) const
     {
         bool ret = false;
-        if ((isprint(ch)) || 
-            (ch == 0x07) || 
-            (ch == 0x08) || 
-            (ch == 0x09) || 
+        if ((isprint(ch)) ||
+            (ch == 0x07) ||
+            (ch == 0x08) ||
+            (ch == 0x09) ||
             (ch == 0x0A) ||
             (ch == 0x0D))
         {
@@ -97,6 +101,7 @@ protected:
         }
         return ret;
     }
+
 private:
 };
 

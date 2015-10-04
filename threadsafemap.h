@@ -65,7 +65,8 @@ public:
 
     std::shared_ptr<std::unique_lock<std::recursive_mutex> > getLock() const
     {
-        std::shared_ptr<std::unique_lock<std::recursive_mutex> > ret(new std::unique_lock<std::recursive_mutex>(_mapMutex));
+        std::shared_ptr<std::unique_lock<std::recursive_mutex> > ret(new std::unique_lock<std::recursive_mutex>(
+                                                                         _mapMutex));
         return ret;
     }
 

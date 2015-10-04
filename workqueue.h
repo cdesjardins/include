@@ -27,7 +27,7 @@
 template <typename T> class WorkQueue
 {
 public:
-    typedef std::function<void (const std::shared_ptr<T> &)> WorkQueueCallback;
+    typedef std::function<void (const std::shared_ptr<T>&)> WorkQueueCallback;
 
     static std::shared_ptr<WorkQueue<T> > createWorkQueue(WorkQueueCallback dataProcessorCallback)
     {
@@ -41,7 +41,7 @@ public:
         doneWithJobs();
     }
 
-    bool processData(const std::shared_ptr<T> &data)
+    bool processData(const std::shared_ptr<T>& data)
     {
         bool ret = true;
         _dataQueue.enqueue(data);
@@ -76,7 +76,7 @@ protected:
         } while (_running == true);
     }
 
-    void processData(std::vector<std::shared_ptr<T> > &currentData)
+    void processData(std::vector<std::shared_ptr<T> >& currentData)
     {
         for (std::size_t index = 0; index < currentData.size(); index++)
         {
