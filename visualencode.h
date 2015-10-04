@@ -22,6 +22,7 @@
 #include <string>
 #include <sstream>
 #include <iomanip>
+#include "unparam.h"
 
 class VisualEncode
 {
@@ -30,6 +31,7 @@ public:
     VisualEncode(const VisualEncode&) = delete;
     VisualEncode(const char* msg)
     {
+        UNREF_PARAM(msg);
     }
     const std::string& getEncoded()
     {
