@@ -24,6 +24,7 @@
 #ifndef _THREAD_SAFE_QUEUE_Hxx
 #define _THREAD_SAFE_QUEUE_Hxx
 
+#include <chrono>
 #include <list>
 #include <mutex>
 #include <condition_variable>
