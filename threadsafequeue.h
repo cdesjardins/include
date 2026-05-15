@@ -25,9 +25,10 @@
 #define _THREAD_SAFE_QUEUE_Hxx
 
 #include <chrono>
+#include <condition_variable>
 #include <list>
 #include <mutex>
-#include <condition_variable>
+#include <vector>
 
 /*
 ** On the wait functions in this class if timeout == -1, then wait forever...
