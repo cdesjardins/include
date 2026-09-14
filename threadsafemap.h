@@ -11,6 +11,7 @@
 
 #include <mutex>
 #include <map>
+#include <memory>
 
 // Simple thread safe map
 
